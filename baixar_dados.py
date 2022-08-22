@@ -7,7 +7,9 @@ servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico)
 
 email = 'testeljukemura@gmail.com'
-senha = 'testeljuke'
+with open('senha.txt', 'r') as a:
+    senha = a.read()
+
 
 #abre o site
 navegador.get('https://www.kaggle.com/datasets/anasmahmood000/coursera-courses-dataset')
