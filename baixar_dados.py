@@ -6,6 +6,9 @@ import time
 servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico)
 
+email = 'testeljukemura@gmail.com'
+senha = 'testeljuke'
+
 #abre o site
 navegador.get('https://www.kaggle.com/datasets/anasmahmood000/coursera-courses-dataset')
 
@@ -20,9 +23,9 @@ navegador.find_element('xpath',
 #dar um tempinho para carregar e preenche os dados
 time.sleep(1)
 navegador.find_element('xpath',
-                       '//*[@id="site-container"]/div/div[2]/form/div[2]/div[1]/div/label/input').send_keys('testeljukemura@gmail.com')
+                       '//*[@id="site-container"]/div/div[2]/form/div[2]/div[1]/div/label/input').send_keys(email)
 navegador.find_element('xpath',
-                       '//*[@id="site-container"]/div/div[2]/form/div[2]/div[2]/div/label/input').send_keys('testeljuke')
+                       '//*[@id="site-container"]/div/div[2]/form/div[2]/div[2]/div/label/input').send_keys(senha)
 
 #aperta botão confirmar
 time.sleep(1)
